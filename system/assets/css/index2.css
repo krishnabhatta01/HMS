@@ -30,4 +30,7 @@ select {
     box-sizing: border-box;
 }
 
+button{
+    color:aqua;
+}
 

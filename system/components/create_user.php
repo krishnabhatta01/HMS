@@ -1,6 +1,7 @@
 <?php
 require('../database/DB.php');
-require('../components/nav.php');
+require('navbar.php');
+require('topbar.php');
 
 
 if (isset($_POST['submit'])) {
@@ -17,36 +18,45 @@ if (isset($_POST['submit'])) {
 
 
 
+<link rel="stylesheet" href="../assets/css/index2.css">
 
+<div class="dash-content">
+    <form id="regForm" style="margin-top:1px;" action="" method="POST">
 
+        <div>Name:
+            <p><input placeholder="First name..." name="fname" required></p>
+            <p><input placeholder="Last name..." name="lname" required></p>
 
-<div>
-    <h1><?php $message ?></h1>
-    <h3 style="margin-left: 40%; margin-top:20px;  padding-bottom: 20px; font-family: 'IBM Plex Sans', sans-serif;">WELCOME ADMINISTRATOR</h3>
+            <label for="gender">Gender</label>
+            <p>
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
 
-    <form action="" method="POST">
-
-        <div class="form-container">
-            <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required>
-
-
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password" required>
-
-
-            <label for="psw"><b>Confirm Password</b></label>
-            <input type="password" placeholder="Enter Confirm Password" name="cpassword" required>
-
-            <label for="country"><b>Post</b></label>
-            <select name="Post">
-                <option value="Doctor">Doctor</option>
-                <option value="Cashier">Cashier</option>
-                <option value="Clinic_employees">Clinic employees</option>
-            </select>
-
-            <button type="submit" name="submit">Create</button>
-
+                </select>
+            </p>
         </div>
+        <div>Contact Info:
+            <p><input placeholder="E-mail..." name="email" required></p>
+            <p><input placeholder="Phone..." name="phone" required></p>
+        </div>
+
+        <div>Login Info:
+            <p><input placeholder="Username..." name="uname" required></p>
+            <p><input placeholder="Password..." name="pword" type="password" required></p>
+            <label for="post">Post</label>
+            <p>
+                <select name="post">
+                    <option value="male">Doctor</option>
+                    <option value="female">Cashier</option>
+                    <option value="female">Admin</option>
+                </select>
+            </p>
+        </div>
+
+        <button class="button" type="submit" name="submit">
+            Register Patient
+        </button>
+
     </form>
 </div>

@@ -9,7 +9,7 @@
 
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="../assets/css/index.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
@@ -36,8 +36,13 @@
                         <i class="uil uil-users-alt"></i>
                         <span class="link-name">User Management</span>
                     </a></li>
-                
+                <li><a href="../components/create_user.php">
+                        <i class="uil uil-users-alt"></i>
+                        <span class="link-name">Add User</span>
+                    </a></li>
+
             </ul>
+
 
             <ul class="logout-mode">
                 <li><a href="../admin/logout.php">
@@ -59,4 +64,10 @@
         </div>
     </nav>
 
-  
+    <script>
+        $(document).ready(function() {
+            $("#flip").click(function() {
+                $("#panel").slideToggle("slow");
+            });
+        });
+    </script>

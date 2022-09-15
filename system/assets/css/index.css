@@ -29,7 +29,7 @@
 
 body {
     min-height: 100vh;
-    background-color: var(--primary-color);
+    
 }
 
 body.dark {
@@ -527,3 +527,43 @@ nav.close~.dashboard .top {
         width: 100%;
     }
 }
+
+
+
+#panel,
+#flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+
+}
+
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #0e4bf1;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 8 0px;
+    padding: 5px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+
+}
+
+.button:hover {
+    background-color: #0e4bf170;
+}
+
+

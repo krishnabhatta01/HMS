@@ -9,3 +9,6 @@
 
          <!--<img src="images/profile.jpg" alt="">-->
      </div>
+
+
+     <script src="../assets/js/index.js"></script>

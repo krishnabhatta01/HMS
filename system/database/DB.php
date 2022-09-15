@@ -74,6 +74,81 @@ class db{
     }
 
 
+    function get_user_data()
+    {
+        $this->connect();
+        $sql = "SELECT * FROM user ";
+        $result = mysqli_query($this->connection, $sql);
+        $row_num = mysqli_num_rows($result);
+        if ($row_num == 0) {
+            return false;
+        } else {
+            while($row = mysqli_fetch_assoc($result)){
+                $data[] = $row;
+            }
+            return $data;
+        }
+    }
+
+    function delete_user($id)
+    {
+        $this->connect();
+        $sql = "DELETE FROM user WHERE id='$id' ";
+        $result = mysqli_query($this->connection, $sql);
+        //$row = mysqli_fetch_assoc($result);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //get total number of Doctor
+    function get_doctor()
+    {
+        $this->connect();
+        $sql = "SELECT * FROM doctb ORDER BY id DESC LIMIT 1;";
+        $result = mysqli_query($this->connection, $sql);
+        
+        
+            while ($row = mysqli_fetch_assoc($result)) {
+                
+                return $row;
+            }
+        
+        
+    }
+
+    //get total number of Patient
+    function get_patient()
+    {
+        $this->connect();
+        $sql = "SELECT * FROM patient ORDER BY id DESC LIMIT 1;";
+        $result = mysqli_query($this->connection, $sql);
+
+
+        while ($row = mysqli_fetch_assoc($result)) {
+
+            return $row;
+        }
+    }
+
+    //get total number of Admin
+    function get_admin()
+    {
+        $this->connect();
+        $sql = "SELECT * FROM user WHERE Post='Admin' ORDER BY id DESC LIMIT 1 ;";
+        $result = mysqli_query($this->connection, $sql);
+
+
+        while ($row = mysqli_fetch_assoc($result)) {
+
+            return $row;
+        }
+    }
+
+
+
 }//end of class
 
 $db_object = new DB();
