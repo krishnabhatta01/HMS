@@ -12,7 +12,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
     <!--<title>Admin Dashboard Panel</title>-->
 </head>
 
@@ -23,27 +22,24 @@
                 <!-- <img src="../assets/image/profile-image.jpg" alt=""> -->
             </div>
 
-            <span class="logo_name">Admin Panel</span>
+            <span class="logo_name">Doc Panel</span>
         </div>
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="../admin/index.php">
+                <li><a href="#">
                         <i class="uil uil-estate"></i>
                         <span class="link-name">Dahsboard</span>
                     </a></li>
-                <li><a href="../components/user_management.php">
+                <li><a href="../doctor/view_appointment.php">
                         <i class="uil uil-users-alt"></i>
-                        <span class="link-name">User Management</span>
+                        <span class="link-name">View Appointment</span>
                     </a></li>
-                <li><a href="../components/create_user.php">
+                <li><a href="../doctor/view_presciption.php">
                         <i class="uil uil-user-plus"></i>
-                        <span class="link-name">Add User</span>
+                        <span class="link-name">Presciption List</span>
                     </a></li>
-                <li><a href="../components/view_patient.php">
-                        <i class="uil uil-user-exclamation"></i>
-                        <span class="link-name">View Patient</span>
-                    </a></li>
+
 
             </ul>
 

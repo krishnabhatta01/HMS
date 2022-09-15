@@ -8,7 +8,7 @@
          </div>
 
          <img src="../assets/image/profile-img.jpg" alt="">
-         <p>Admin</p>
+        <p>Doctor</p>
      </div>
 
 

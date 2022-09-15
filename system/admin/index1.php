@@ -28,10 +28,7 @@ session_destroy();
         <br>
 
         <br>
-        <input type="text" class="text" name="post">
-        <span>post</span>
-
-        <br>
+        
 
 
         <button class="signin" type="submit" name="submit">

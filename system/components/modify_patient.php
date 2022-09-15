@@ -4,30 +4,32 @@ require('navbar.php');
 require('topbar.php');
 
 
-if (isset($_POST['submit'])) {
-    extract($_POST);
-    if ($db_object->user($_POST)) {
+$data = $db_object->get_all_patient();
+extract($data);
 
-        $message = "User Successfully created";
-    } else {
-        $message = "User Creation Failed";
-    }
-}
+
 
 ?>
-
-
-
 <link rel="stylesheet" href="../assets/css/index2.css">
 
 <div class="dash-content">
     <form id="regForm" style="margin-top:1px;" action="" method="POST">
-
+        <span>
+            <h2 style="padding-bottom:10px;">Modify Patient</h3>
+        </span>
         <div>Name:
-            <p><input placeholder="First name..." name="fname" required></p>
+            <p><input placeholder="First name..." name="fname" value="<?= $data['first_name'] ?>" required></p>
             <p><input placeholder="Last name..." name="lname" required></p>
+            <label for="gender">Gender</label>
+            <p>
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="others">Others</option>
+                    
+                </select>
+            </p>
 
-        
         </div>
         <div>Contact Info:
             <p><input placeholder="E-mail..." name="email" required></p>
@@ -40,10 +42,8 @@ if (isset($_POST['submit'])) {
             <label for="post">Post</label>
             <p>
                 <select name="post">
-                    <option value="male">Doctor</option>
-                    <option value="cashier">Cashier</option>
-                    <option value="admin">Admin</option>
-                    <option value="clinic">Clinic Assistant</option>
+                    <option value="post">Patient</option>
+                    
                 </select>
             </p>
         </div>

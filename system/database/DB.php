@@ -28,7 +28,7 @@ class db{
         $this->connect();
         extract($user);
         
-        $sql = "INSERT INTO user VALUES(null, '$username','$password','$Post')";
+        $sql = "INSERT INTO user VALUES(null, '$uname','$pword','$post', null)";
         $result = mysqli_query($this->connection, $sql);
         if ($result == true) {
                 return true;
@@ -103,6 +103,19 @@ class db{
         }
     }
 
+    function delete_patient($id)
+    {
+        $this->connect();
+        $sql = "DELETE FROM patient WHERE id='$id' ";
+        $result = mysqli_query($this->connection, $sql);
+        //$row = mysqli_fetch_assoc($result);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     //get total number of Doctor
     function get_doctor()
     {
@@ -132,6 +145,24 @@ class db{
             return $row;
         }
     }
+
+    //get all of Patient
+    function get_all_patient()
+    {
+        $this->connect();
+        $sql = "SELECT * FROM patient;";
+        $result = mysqli_query($this->connection, $sql);
+        $row_num = mysqli_num_rows($result);
+        if ($row_num == 0) {
+            return false;
+        } else {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+    }
+
 
     //get total number of Admin
     function get_admin()
